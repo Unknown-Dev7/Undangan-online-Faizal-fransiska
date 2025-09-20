@@ -1,0 +1,123 @@
+/* General */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fffef7;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Loading */
+#loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #fffef7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  font-size: 3rem;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+              url("https://i.ibb.co/vzHL6CM/batik-jawa.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 2rem;
+  color: #c9a400;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.typing {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #222;
+  border-right: 3px solid #c9a400;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Detail Section */
+.details {
+  padding: 50px 20px;
+  text-align: center;
+  background: #fff;
+}
+
+.salam {
+  color: #c9a400;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.intro {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.couple {
+  font-size: 1.6rem;
+  color: #c9a400;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.details p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.closing {
+  margin-top: 30px;
+  font-style: italic;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  background: #c9a400;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .typing {
+    font-size: 1.6rem;
+  }
+  .couple {
+    font-size: 1.3rem;
+  }
+}
