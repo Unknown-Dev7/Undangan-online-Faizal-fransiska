@@ -1,10 +1,4 @@
-// Loading Screen
-window.onload = () => {
-  setTimeout(() => {
-    document.getElementById("loading").style.display = "none";
-    typeWriter();
-  }, 500); // 1.5 detik
-};
+
 
 // Typing Effect
 const text = "Faizal Yustomi & Fransiska Dia Saputri";
