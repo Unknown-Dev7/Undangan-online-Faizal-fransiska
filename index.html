@@ -1,39 +1,156 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Undangan Pernikahan</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Undangan | Faizal & Siska</title>
+  <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fff;
+      --text:#222;
+      --muted:#6b6b6b;
+      --maxw:800px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Montserrat,system-ui,-apple-system,'Segoe UI',Roboto; background:var(--bg);color:var(--text)}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:36px 18px;display:flex;flex-direction:column;gap:48px}
+
+    /* Header / cover */
+    .cover{
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding-top:18px;
+    }
+    .crown{
+      width:300px;max-width:100vw;
+      opacity:0.95;
+      filter:drop-shadow(0 6px 12px rgba(0,0,0,.1));
+      transform-origin:center;
+      animation:float 5s ease-in-out infinite;
+    }
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-4px)}100%{transform:translateY(0)}}
+
+    .overlay-text{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      text-align:center;
+      color:#000;
+      text-shadow:0 2px 6px rgba(255,255,255,.85);
+    }
+    .intro-small{font-family:'Montserrat';font-weight:600;color:#000;letter-spacing:0.2px;margin-bottom:6px}
+    h1.main-name{font-family:'Imperial Script',cursive;font-size:64px;margin:0;line-height:0.9;text-align:center}
+    .amp{font-size:72px;margin:0}
+    @media(min-width:720px){h1.main-name{font-size:92px}.amp{font-size:120px}}
+
+    /* Card detail */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,0.98));border-radius:18px;padding:28px;text-align:center;box-shadow:0 6px 30px rgba(0,0,0,.06);backdrop-filter: blur(6px)}
+    .salam{font-family:'Imperial Script',cursive;font-size:42px;margin:0}
+    .desc{color:var(--muted);line-height:1.5;margin-top:8px}
+
+    .names{font-family:'Imperial Script',cursive;font-size:48px;margin:18px 0}
+    .sub{font-weight:700;color:var(--muted);margin-top:6px}
+
+    .info{color:var(--muted);text-align:center;line-height:1.6;margin:18px 0}
+
+    /* Countdown section */
+    .countdown-wrap{display:flex;flex-direction:column;align-items:center;gap:18px;padding:28px}
+    .countdown{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+    .timebox{min-width:84px;padding:12px 14px;border-radius:12px;background:#f7f7f7;text-align:center}
+    .timebox .num{font-weight:800;font-size:28px}
+    .timebox .label{font-size:12px;color:var(--muted);margin-top:6px}
+    .countdown-legend{font-weight:800;font-size:14px;color:var(--text)}
+
+    /* Footer */
+    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:14px;padding-bottom:48px}
+    .fixed-footer{position:fixed;left:0;right:0;bottom:8px;text-align:center}
+
+    /* small screens */
+    @media(max-width:420px){.salam{font-size:32px}.names{font-size:36px}.timebox{min-width:70px}}
+  </style>
 </head>
 <body>
+  <div class="wrap">
+    <section class="cover" aria-labelledby="judul">
+      <!-- Ganti dengan PNG wayang gunung -->
+      <img src="1.png" alt="Wayang Gunung" class="crown">
 
-  <!-- Hero Section -->
-  <section class="hero" id="content">
-    <h2 class="title">Undangan Pernikahan</h2>
-    <h1 class="typing" id="nama"></h1>
-  </section>
+      <div class="overlay-text">
+        <div class="intro-small">the wedding of</div>
+        <h1 id="judul" class="main-name">Faizal<br><span class="amp">&</span><br>Siska</h1>
+      </div>
+    </section>
 
-  <!-- Detail Section -->
-  <section class="details">
-    <h2 class="salam">Assalamualaikum Wr. Wb.</h2>
-    <p class="intro">
-      Dengan penuh rasa syukur kepada Allah SWT, kami bermaksud menyelenggarakan acara pernikahan putra-putri kami:
-    </p>
-    <p class="couple">Faizal Yustomi & Fransiska Dia Saputri</p>
-    <p><strong>Hari/Tanggal:</strong> Senin Pon, 13 Oktober 2025</p>
-    <p><strong>Alamat:</strong> Dusun Sumbergaleh, RT 25 / RW 08, Desa Bareng,  
-       Kecamatan Sekar, Kabupaten Bojonegoro</p>
-    <p class="closing">
-      Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir serta memberikan doa restu.
-    </p>
-    <h2 class="salam">Wassalamualaikum Wr. Wb.</h2>
-  </section>
+    <section id="details" class="card">
+      <h2 class="salam">Assalamu'alaikum wr. wb</h2>
+      <p class="desc">Dengan memohon Ridho serta Rahmat Allah SWT, perkenankanlah kami menikahkan putra putri kami:</p>
 
-  <footer>
-    <p>© 2025 FranzDev</p>
-  </footer>
+      <div class="names">Fransiska Dia Saputri</div>
+      <div class="sub">Putri Bpk. Ngaslan & Ibu Winarti</div>
 
-  <script src="script.js"></script>
+      <div style="height:18px"></div>
+
+      <div class="names">Faizal Yustomi</div>
+      <div class="sub">Putra Bpk. Abdul Suyadi & Ibu Yuk Ninik</div>
+
+      <p class="info">Yang Insya Allah akan dilaksanakan pada:<br>
+      Hari: Minggu Pahing - Senin Pon<br>
+      Tanggal: 12-13 Oktober 2025<br>
+      Waktu: Siang-Malam<br>
+      Alamat: Dsn. Sumbergaleh, RT 25, RW 08<br>
+      Ds. Bareng, Kec. Sekar-Bojonegoro (Kidul Loji)</p>
+
+      <p style="color:var(--muted)">Atas kehadiran serta do'a restunya kami sampaikan terima kasih.<br><strong>Wassalamu'alaikum wr. wb</strong></p>
+    </section>
+
+    <section id="countdownSection" class="card">
+      <div class="countdown-wrap">
+        <div class="countdown-legend">Hitung Mundur</div>
+        <div class="countdown" role="timer" aria-live="polite">
+          <div class="timebox"><div class="num" id="days">0</div><div class="label">Hari</div></div>
+          <div class="timebox"><div class="num" id="hours">00</div><div class="label">Jam</div></div>
+          <div class="timebox"><div class="num" id="minutes">00</div><div class="label">Menit</div></div>
+          <div class="timebox"><div class="num" id="seconds">00</div><div class="label">Detik</div></div>
+        </div>
+
+        <div style="font-size:13px;color:var(--muted)">Countdown menuju <strong>13 Oktober 2025</strong></div>
+      </div>
+    </section>
+
+    <footer class="fixed-footer">
+      <div>®FranzDev</div>
+    </footer>
+  </div>
+
+  <script>
+    // Countdown logic -> target is 13 October 2025 at 00:00 local time
+    const target = new Date(2025,9,13,0,0,0); // month is 0-indexed: 9 = October
+
+    function updateCountdown(){
+      const now = new Date();
+      let diff = Math.max(0, target - now);
+      const s = Math.floor(diff/1000);
+      const days = Math.floor(s / (3600*24));
+      const hours = Math.floor((s % (3600*24)) / 3600);
+      const minutes = Math.floor((s % 3600) / 60);
+      const seconds = s % 60;
+
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = String(hours).padStart(2,'0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2,'0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2,'0');
+
+      if(diff<=0){
+        clearInterval(timerInterval);
+        document.querySelector('.countdown-legend').textContent = 'Selamat! Hari H telah tiba.';
+      }
+    }
+    updateCountdown();
+    const timerInterval = setInterval(updateCountdown,1000);
+  </script>
 </body>
 </html>
