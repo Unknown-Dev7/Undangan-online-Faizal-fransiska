@@ -9,12 +9,19 @@
     :root{
       --bg:#fff;
       --text:#222;
-      --muted:#6b6b6b;
+      --muted:#eaeaea;
       --maxw:800px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Montserrat,system-ui,-apple-system,'Segoe UI',Roboto; background:var(--bg);color:var(--text)}
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:36px 18px;display:flex;flex-direction:column;gap:48px}
+    html,body{
+      height:100%;
+      margin:0;
+      font-family:Montserrat,system-ui,-apple-system,'Segoe UI',Roboto;
+      background:url("3.jpg") no-repeat center center fixed;
+      background-size:cover;
+      color:var(--text);
+    }
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:36px 18px;display:flex;flex-direction:column;gap:48px;background:rgba(0,0,0,0.4);border-radius:18px}
 
     /* Header / cover */
     .cover{
@@ -25,13 +32,13 @@
       padding-top:18px;
     }
     .crown{
-      width:300px;max-width:100vw;
+      width:260px;max-width:150vw;
       opacity:0.95;
       filter:drop-shadow(0 6px 12px rgba(0,0,0,.1));
       transform-origin:center;
-      animation:float 5s ease-in-out infinite;
+      animation:float 4s ease-in-out infinite;
     }
-    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-4px)}100%{transform:translateY(0)}}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
 
     .overlay-text{
       position:absolute;
@@ -39,75 +46,116 @@
       left:50%;
       transform:translate(-50%,-50%);
       text-align:center;
-      color:#000;
-      text-shadow:0 2px 6px rgba(255,255,255,.85);
+      color:#fff;
+      text-shadow:0 2px 6px rgba(0,0,0,.85);
     }
-    .intro-small{font-family:'Montserrat';font-weight:600;color:#000;letter-spacing:0.2px;margin-bottom:6px}
+    .intro-small{font-family:'Montserrat';font-weight:600;color:#fff;letter-spacing:0.2px;margin-bottom:6px}
     h1.main-name{font-family:'Imperial Script',cursive;font-size:64px;margin:0;line-height:0.9;text-align:center}
     .amp{font-size:72px;margin:0}
     @media(min-width:720px){h1.main-name{font-size:92px}.amp{font-size:120px}}
 
-    /* Card detail */
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,0.98));border-radius:18px;padding:28px;text-align:center;box-shadow:0 6px 30px rgba(0,0,0,.06);backdrop-filter: blur(6px)}
-    .salam{font-family:'Imperial Script',cursive;font-size:42px;margin:0}
-    .desc{color:var(--muted);line-height:1.5;margin-top:8px}
-
-    .names{font-family:'Imperial Script',cursive;font-size:48px;margin:18px 0}
-    .sub{font-weight:700;color:var(--muted);margin-top:6px}
-
-    .info{color:var(--muted);text-align:center;line-height:1.6;margin:18px 0}
+    /* Card detail with photo background */
+    .card-photo{
+      position:relative;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 6px 30px rgba(0,0,0,.15);
+      animation:float 6s ease-in-out infinite;
+    }
+    .card-photo img.bg-photo{
+      width:100%;
+      height:auto;
+      display:block;
+      filter:brightness(0.6);
+    }
+    .card-photo .text-overlay{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      text-align:center;
+      color:#fff;
+      padding:20px 30px;
+      text-shadow:0 3px 8px rgba(0,0,0,.8);
+      width:90%;          
+      max-width:700px;    
+      box-sizing:border-box;
+    }
+    .card-photo h2{font-family:'Imperial Script',cursive;font-size:42px;margin:0 0 16px}
+    .card-photo .desc{line-height:1.6;margin-bottom:18px}
+    .card-photo .names{font-family:'Imperial Script',cursive;font-size:48px;margin:14px 0}
+    .card-photo .sub{font-weight:600;margin-bottom:8px}
+    .card-photo .info{line-height:1.6;margin:16px 0;font-weight:500}
+    .card-photo strong{font-weight:600}
 
     /* Countdown section */
-    .countdown-wrap{display:flex;flex-direction:column;align-items:center;gap:18px;padding:28px}
+    .countdown-wrap{display:flex;flex-direction:column;align-items:center;gap:18px;padding:28px;background:rgba(0,0,0,0.5);border-radius:12px}
     .countdown{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
     .timebox{min-width:84px;padding:12px 14px;border-radius:12px;background:#f7f7f7;text-align:center}
     .timebox .num{font-weight:800;font-size:28px}
-    .timebox .label{font-size:12px;color:var(--muted);margin-top:6px}
-    .countdown-legend{font-weight:800;font-size:14px;color:var(--text)}
+    .timebox .label{font-size:12px;color:#444;margin-top:6px}
+    .countdown-legend{font-weight:800;font-size:20px;color:#fff}
 
     /* Footer */
-    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:14px;padding-bottom:48px}
-    .fixed-footer{position:fixed;left:0;right:0;bottom:8px;text-align:center}
+    footer{margin-top:36px;text-align:center;color:#fff;font-size:14px;padding-bottom:48px;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+    .fixed-footer{position:fixed;left:0;right:0;bottom:8px;text-align:center;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+
+    /* Animasi scroll */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+    }
+    .scroll-reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* small screens */
-    @media(max-width:420px){.salam{font-size:32px}.names{font-size:36px}.timebox{min-width:70px}}
+    @media(max-width:420px){
+      .card-photo h2{font-size:30px}
+      .card-photo .names{font-size:34px}
+      .timebox{min-width:70px}
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
+    <!-- Cover -->
     <section class="cover" aria-labelledby="judul">
-      <!-- Ganti dengan PNG wayang gunung -->
       <img src="1.png" alt="Wayang Gunung" class="crown">
-
       <div class="overlay-text">
         <div class="intro-small">the wedding of</div>
         <h1 id="judul" class="main-name">Faizal<br><span class="amp">&</span><br>Siska</h1>
       </div>
     </section>
 
-    <section id="details" class="card">
-      <h2 class="salam">Assalamu'alaikum wr. wb</h2>
-      <p class="desc">Dengan memohon Ridho serta Rahmat Allah SWT, perkenankanlah kami menikahkan putra putri kami:</p>
+    <!-- Detail with photo background -->
+    <section id="details" class="card-photo scroll-reveal">
+      <img src="2.jpg" alt="Foto Pengantin" class="bg-photo">
+      <div class="text-overlay">
+        <h2>Assalamu'alaikum wr. wb</h2>
+        <p class="desc">Dengan memohon Ridho serta Rahmat Allah SWT, perkenankanlah kami menikahkan putra putri kami:</p>
 
-      <div class="names">Fransiska Dia Saputri</div>
-      <div class="sub">Putri Bpk. Ngaslan & Ibu Winarti</div>
+        <div class="names">Fransiska Dia Saputri</div>
+        <div class="sub">Putri Bpk. Ngaslan & Ibu Winarti</div>
 
-      <div style="height:18px"></div>
+        <div class="names">Faizal Yustomi</div>
+        <div class="sub">Putra Bpk. Abdul Suyadi & Ibu Yuk Ninik</div>
 
-      <div class="names">Faizal Yustomi</div>
-      <div class="sub">Putra Bpk. Abdul Suyadi & Ibu Yuk Ninik</div>
+        <p class="info">Yang Insya Allah akan dilaksanakan pada:<br>
+        Hari: Minggu Pahing - Senin Pon<br>
+        Tanggal: 12-13 Oktober 2025<br>
+        Waktu: Siang-Malam<br>
+        Alamat: Dsn. Sumbergaleh, RT 25, RW 08<br>
+        Ds. Bareng, Kec. Sekar-Bojonegoro (Kidul Loji)</p>
 
-      <p class="info">Yang Insya Allah akan dilaksanakan pada:<br>
-      Hari: Minggu Pahing - Senin Pon<br>
-      Tanggal: 12-13 Oktober 2025<br>
-      Waktu: Siang-Malam<br>
-      Alamat: Dsn. Sumbergaleh, RT 25, RW 08<br>
-      Ds. Bareng, Kec. Sekar-Bojonegoro (Kidul Loji)</p>
-
-      <p style="color:var(--muted)">Atas kehadiran serta do'a restunya kami sampaikan terima kasih.<br><strong>Wassalamu'alaikum wr. wb</strong></p>
+        <p><strong>Atas kehadiran serta do'a restunya kami sampaikan terima kasih.<br>Wassalamu'alaikum wr. wb</strong></p>
+      </div>
     </section>
 
-    <section id="countdownSection" class="card">
+    <!-- Countdown -->
+    <section id="countdownSection" class="card scroll-reveal">
       <div class="countdown-wrap">
         <div class="countdown-legend">Hitung Mundur</div>
         <div class="countdown" role="timer" aria-live="polite">
@@ -116,19 +164,21 @@
           <div class="timebox"><div class="num" id="minutes">00</div><div class="label">Menit</div></div>
           <div class="timebox"><div class="num" id="seconds">00</div><div class="label">Detik</div></div>
         </div>
-
-        <div style="font-size:13px;color:var(--muted)">Countdown menuju <strong>13 Oktober 2025</strong></div>
+        <div style="font-size:13px;color:#fff">Countdown menuju <strong>13 Oktober 2025</strong></div>
       </div>
     </section>
+   <audio id="bgm" src="bs.mp3" loop></audio>
 
+
+    <!-- Footer -->
     <footer class="fixed-footer">
-      <div>®FranzDev</div>
+      <div>© FranzDev | Contact: +62 822-3324-2851</div>
     </footer>
   </div>
 
   <script>
     // Countdown logic -> target is 13 October 2025 at 00:00 local time
-    const target = new Date(2025,9,13,0,0,0); // month is 0-indexed: 9 = October
+    const target = new Date(2025,9,13,0,0,0);
 
     function updateCountdown(){
       const now = new Date();
@@ -151,6 +201,32 @@
     }
     updateCountdown();
     const timerInterval = setInterval(updateCountdown,1000);
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll(".scroll-reveal").forEach(el => observer.observe(el));
+    
+    const bgm = document.getElementById("bgm");
+
+  // Coba autoplay, kalau gagal tunggu user klik
+  function tryPlay() {
+    bgm.play().catch(() => {
+      // kalau gagal, tunggu klik
+      document.body.addEventListener("click", () => {
+        bgm.play();
+      }, { once:true });
+    });
+  }
+
+  // coba langsung
+  tryPlay();
   </script>
 </body>
 </html>
